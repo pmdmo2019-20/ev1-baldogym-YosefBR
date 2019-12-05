@@ -32,7 +32,6 @@ class ScheduleActivityAdapter : RecyclerView.Adapter<ScheduleActivityAdapter.Vie
         return data.size
     }
 
-    @TargetApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val trainingSession: TrainingSession = data[position]
         holder.bind(trainingSession)
@@ -47,23 +46,18 @@ class ScheduleActivityAdapter : RecyclerView.Adapter<ScheduleActivityAdapter.Vie
 
     inner class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView),
         LayoutContainer {
-
         init {
             containerView.setOnClickListener { onItemClickListener?.invoke(adapterPosition) }
-            btnJoin.setOnClickListener { onItemClickListener?.invoke(adapterPosition) }
         }
-
         @SuppressLint("ResourceAsColor")
         fun bind(trainingSession: TrainingSession) {
             trainingSession.run {
-                containerView.btnJoin.isClickable = userJoined
-                if (!userJoined) {
-                    btnJoin.setBackgroundColor(R.color.white)
-                } else {
-                    btnJoin.text = R.string.schedule_item_quit.toString()
-                    btnJoin.setBackgroundColor(R.color.black)
-                    }
-                }
+                sessionName.text = trainingSession.name
+                sessionTrainer.text = trainingSession.trainer
+                sessionHour.text = trainingSession.time
+                sessionRoom.text = trainingSession.room
+                imgTraining.setImageResource(photoResId)
             }
         }
+    }
 }

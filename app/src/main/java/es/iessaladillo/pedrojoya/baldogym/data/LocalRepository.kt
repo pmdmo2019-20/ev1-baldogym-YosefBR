@@ -7,12 +7,61 @@ import java.util.concurrent.ThreadLocalRandom
 
 object LocalRepository : Repository {
 
-
-    // TODO:
-
     private val trainingSessions: List<TrainingSession> = createWeekSchedule()
 
     override fun queryTrainingSessions(): List<TrainingSession> = trainingSessions.toList()
+
+    override fun getTrainingSession(trainingSessionId: Long): TrainingSession {
+        lateinit var traiS: TrainingSession
+        trainingSessions.forEach {
+            if (it.id == trainingSessionId) {
+                traiS = it
+            }
+        }
+        return traiS
+    }
+
+    override fun queryMondaySessions(): List<TrainingSession> {
+        return ArrayList(trainingSessions).filter {
+            it.weekDay == WeekDay.MONDAY
+        }
+    }
+
+    override fun queryTuesdaySessions(): List<TrainingSession> {
+        return ArrayList(trainingSessions).filter {
+            it.weekDay == WeekDay.TUESDAY
+        }
+    }
+
+    override fun queryWednesdaySessions(): List<TrainingSession> {
+        return ArrayList(trainingSessions).filter {
+            it.weekDay == WeekDay.WEDNESDAY
+        }
+    }
+
+    override fun queryThursdaySessions(): List<TrainingSession> {
+        return ArrayList(trainingSessions).filter {
+            it.weekDay == WeekDay.THURSDAY
+        }
+    }
+
+    override fun queryFridaySessions(): List<TrainingSession> {
+        return ArrayList(trainingSessions).filter {
+            it.weekDay == WeekDay.FRIDAY
+        }
+    }
+
+    override fun querySaturdaySessions(): List<TrainingSession> {
+        return ArrayList(trainingSessions).filter {
+            it.weekDay == WeekDay.SATURDAY
+        }
+    }
+
+    override fun querySundaySessions(): List<TrainingSession> {
+        return ArrayList(trainingSessions).filter {
+            it.weekDay == WeekDay.SUNDAY
+        }
+    }
 
     private fun createWeekSchedule(): List<TrainingSession> {
 

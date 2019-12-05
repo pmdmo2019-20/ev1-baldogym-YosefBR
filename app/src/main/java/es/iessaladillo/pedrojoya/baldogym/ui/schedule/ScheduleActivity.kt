@@ -1,7 +1,6 @@
 package es.iessaladillo.pedrojoya.baldogym.ui.schedule
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.observe
@@ -23,13 +22,19 @@ class ScheduleActivity : AppCompatActivity() {
 
     private val listAdapter: ScheduleActivityAdapter = ScheduleActivityAdapter().also {
         it.onItemClickListener = { position ->
-            //goToData(position)
+            watchTrainingSession(it.getItem(position))
         }
+    }
+
+    private fun watchTrainingSession(trainingSession: TrainingSession) {
+        val intent = viewModel.seeTrainingSession(trainingSession)
+        startActivity(intent)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.schedule_activity)
+        setupViews()
         setupRecyclerView()
         observeTrainingSessions()
     }
@@ -41,6 +46,30 @@ class ScheduleActivity : AppCompatActivity() {
             addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
             itemAnimator = DefaultItemAnimator()
             adapter = listAdapter
+        }
+    }
+
+    private fun setupViews() {
+        buttonMon.setOnClickListener {
+            viewModel.filterMonday()
+        }
+        buttonTue.setOnClickListener {
+            viewModel.filterTuesday()
+        }
+        buttonWed.setOnClickListener {
+            viewModel.filterWednesday()
+        }
+        buttonThu.setOnClickListener {
+            viewModel.filterThursday()
+        }
+        buttonFri.setOnClickListener {
+            viewModel.filterFriday()
+        }
+        buttonSat.setOnClickListener {
+            viewModel.filterSaturday()
+        }
+        buttonSun.setOnClickListener {
+            viewModel.filterSunday()
         }
     }
 
