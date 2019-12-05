@@ -15,6 +15,8 @@
         app:layout_constraintEnd_toStartOf="@+id/buttonTue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/black"
+        android:textColor="@color/white_semi"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -25,6 +27,8 @@
         app:layout_constraintEnd_toStartOf="@+id/buttonWed"
         app:layout_constraintStart_toEndOf="@+id/buttonMon"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/black"
+        android:textColor="@color/white_semi"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -35,6 +39,8 @@
         app:layout_constraintEnd_toStartOf="@+id/buttonThu"
         app:layout_constraintStart_toEndOf="@+id/buttonTue"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/black"
+        android:textColor="@color/white_semi"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -45,6 +51,8 @@
         app:layout_constraintEnd_toStartOf="@+id/buttonFri"
         app:layout_constraintStart_toEndOf="@+id/buttonWed"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/black"
+        android:textColor="@color/white_semi"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -55,6 +63,8 @@
         app:layout_constraintEnd_toStartOf="@+id/buttonSat"
         app:layout_constraintStart_toEndOf="@+id/buttonThu"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/black"
+        android:textColor="@color/white_semi"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -65,6 +75,8 @@
         app:layout_constraintEnd_toStartOf="@+id/buttonSun"
         app:layout_constraintStart_toEndOf="@+id/buttonFri"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/black"
+        android:textColor="@color/white_semi"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -75,6 +87,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonSat"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/black"
+        android:textColor="@color/white_semi"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -82,6 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:text="@string/actualDay"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonMon"

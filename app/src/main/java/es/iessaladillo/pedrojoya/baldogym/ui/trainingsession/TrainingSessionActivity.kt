@@ -27,6 +27,7 @@ class TrainingSessionActivity : AppCompatActivity() {
         lblSessionHour.text = viewModel.getTrainingSession(id).time
         lblSessionRoom.text = viewModel.getTrainingSession(id).room
         lblSessionDesc.text = viewModel.getTrainingSession(id).description
+        lblParticipants.text = getString(R.string.participants, viewModel.getTrainingSession(id).participants)
     }
 
 }

@@ -18,6 +18,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/sessionName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,6 +41,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:textColor="@color/darkGrey"
         android:id="@+id/sessionRoom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,6 +53,8 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:id="@+id/sessionHour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,13 +71,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/joinSession"
-        app:layout_constraintEnd_toEndOf="@+id/participants"
+        app:layout_constraintEnd_toEndOf="@+id/lblParticipants"
         app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="@+id/participants"
+        app:layout_constraintStart_toStartOf="@+id/lblParticipants"
+        android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/participants"
+        android:id="@+id/lblParticipants"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"

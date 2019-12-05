@@ -1,8 +1,6 @@
 package es.iessaladillo.pedrojoya.baldogym.ui.schedule
 
 import android.annotation.SuppressLint
-import android.annotation.TargetApi
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -57,6 +55,11 @@ class ScheduleActivityAdapter : RecyclerView.Adapter<ScheduleActivityAdapter.Vie
                 sessionHour.text = trainingSession.time
                 sessionRoom.text = trainingSession.room
                 imgTraining.setImageResource(photoResId)
+                containerView.lblParticipants.run {
+                    text = resources.getString(R.string.participants, participants)
+                }
+                btnJoin.setOnClickListener {
+                }
             }
         }
     }

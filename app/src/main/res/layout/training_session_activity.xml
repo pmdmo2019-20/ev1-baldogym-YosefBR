@@ -72,6 +72,20 @@
         app:layout_constraintTop_toBottomOf="@+id/lblSessionHour"
         tools:ignore="MissingConstraints" />
 
+    <View
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/darkGrey"
+        app:layout_constraintBottom_toTopOf="@+id/lblSessionDesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblSessionRoom"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/lblSessionDesc"
         android:layout_width="wrap_content"
@@ -80,7 +94,40 @@
         android:layout_marginTop="16dp"
         android:text="PRUEBA"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblSessionRoom"
+        app:layout_constraintTop_toBottomOf="@+id/bar"
         tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:textColor="@color/white"
+        android:id="@+id/lblParticipants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/participants"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.54" />
+
+    <Button
+        android:id="@+id/btnJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@color/white"
+        android:text="@string/joinSession"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
