@@ -7,7 +7,12 @@ import java.util.concurrent.ThreadLocalRandom
 
 object LocalRepository : Repository {
 
+
     // TODO:
+
+    private val trainingSessions: List<TrainingSession> = createWeekSchedule()
+
+    override fun queryTrainingSessions(): List<TrainingSession> = trainingSessions.toList()
 
     private fun createWeekSchedule(): List<TrainingSession> {
 

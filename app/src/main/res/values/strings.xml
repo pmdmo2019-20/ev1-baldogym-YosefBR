@@ -34,5 +34,12 @@
     <!-- Sesión -->
     <string name="session_not_found">Training session not found</string>
     <string name="session_imgPhoto">Training session photo</string>
+    <string name="bodyAttack">Body Attack</string>
+    <string name="trainer">Entrenador1</string>
+    <string name="room">Body Room</string>
+    <string name="hour">17:00 - 18:00</string>
+    <string name="joinSession">JOIN</string>
+    <string name="participants">%d Participants</string>
+    <string name="actualDay">Actual Day</string>
 
 </resources>
