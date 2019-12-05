@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import es.iessaladillo.pedrojoya.baldogym.data.Repository
 import es.iessaladillo.pedrojoya.baldogym.data.entity.TrainingSession
 import es.iessaladillo.pedrojoya.baldogym.data.entity.WeekDay
+import es.iessaladillo.pedrojoya.baldogym.data.entity.getCurrentWeekDay
 import es.iessaladillo.pedrojoya.baldogym.ui.trainingsession.TrainingSessionActivity
 
 class ScheduleActivityViewModel(private val repository: Repository,
@@ -20,7 +21,7 @@ class ScheduleActivityViewModel(private val repository: Repository,
         get() = _trainingSessions
 
     init {
-        _trainingSessions.value = repository.queryTrainingSessions()
+        _trainingSessions.value = repository.querySessionsByDay(getCurrentWeekDay())
     }
 
     private fun queryListData(newList: List<TrainingSession>) {
@@ -56,19 +57,19 @@ class ScheduleActivityViewModel(private val repository: Repository,
     private fun queryTrainingSessions(filter: WeekDay) {
         when (filter) {
             WeekDay.MONDAY ->
-                queryListData(repository.queryMondaySessions())
+                queryListData(repository.querySessionsByDay(filter))
             WeekDay.TUESDAY ->
-                queryListData(repository.queryTuesdaySessions())
+                queryListData(repository.querySessionsByDay(filter))
             WeekDay.WEDNESDAY ->
-                queryListData(repository.queryWednesdaySessions())
+                queryListData(repository.querySessionsByDay(filter))
             WeekDay.THURSDAY ->
-                queryListData(repository.queryThursdaySessions())
+                queryListData(repository.querySessionsByDay(filter))
             WeekDay.FRIDAY ->
-                queryListData(repository.queryFridaySessions())
+                queryListData(repository.querySessionsByDay(filter))
             WeekDay.SATURDAY ->
-                queryListData(repository.querySaturdaySessions())
+                queryListData(repository.querySessionsByDay(filter))
             WeekDay.SUNDAY ->
-                queryListData(repository.querySundaySessions())
+                queryListData(repository.querySessionsByDay(filter))
         }
     }
 

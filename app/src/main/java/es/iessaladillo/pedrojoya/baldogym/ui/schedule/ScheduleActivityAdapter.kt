@@ -59,6 +59,7 @@ class ScheduleActivityAdapter : RecyclerView.Adapter<ScheduleActivityAdapter.Vie
                     text = resources.getString(R.string.participants, participants)
                 }
                 btnJoin.setOnClickListener {
+
                 }
             }
         }

@@ -21,45 +21,29 @@ object LocalRepository : Repository {
         return traiS
     }
 
-    override fun queryMondaySessions(): List<TrainingSession> {
-        return ArrayList(trainingSessions).filter {
-            it.weekDay == WeekDay.MONDAY
-        }
-    }
-
-    override fun queryTuesdaySessions(): List<TrainingSession> {
-        return ArrayList(trainingSessions).filter {
-            it.weekDay == WeekDay.TUESDAY
-        }
-    }
-
-    override fun queryWednesdaySessions(): List<TrainingSession> {
-        return ArrayList(trainingSessions).filter {
-            it.weekDay == WeekDay.WEDNESDAY
-        }
-    }
-
-    override fun queryThursdaySessions(): List<TrainingSession> {
-        return ArrayList(trainingSessions).filter {
-            it.weekDay == WeekDay.THURSDAY
-        }
-    }
-
-    override fun queryFridaySessions(): List<TrainingSession> {
-        return ArrayList(trainingSessions).filter {
-            it.weekDay == WeekDay.FRIDAY
-        }
-    }
-
-    override fun querySaturdaySessions(): List<TrainingSession> {
-        return ArrayList(trainingSessions).filter {
-            it.weekDay == WeekDay.SATURDAY
-        }
-    }
-
-    override fun querySundaySessions(): List<TrainingSession> {
-        return ArrayList(trainingSessions).filter {
-            it.weekDay == WeekDay.SUNDAY
+    override fun querySessionsByDay(weekDay: WeekDay): List<TrainingSession> {
+        when (weekDay) {
+            WeekDay.MONDAY -> return ArrayList(trainingSessions).filter {
+                it.weekDay == WeekDay.MONDAY
+            }
+            WeekDay.TUESDAY -> return ArrayList(trainingSessions).filter {
+                it.weekDay == WeekDay.TUESDAY
+            }
+            WeekDay.WEDNESDAY -> return ArrayList(trainingSessions).filter {
+                it.weekDay == WeekDay.WEDNESDAY
+            }
+            WeekDay.THURSDAY -> return ArrayList(trainingSessions).filter {
+                it.weekDay == WeekDay.THURSDAY
+            }
+            WeekDay.FRIDAY -> return ArrayList(trainingSessions).filter {
+                it.weekDay == WeekDay.FRIDAY
+            }
+            WeekDay.SATURDAY -> return ArrayList(trainingSessions).filter {
+                it.weekDay == WeekDay.SATURDAY
+            }
+            else -> return ArrayList(trainingSessions).filter {
+                it.weekDay == WeekDay.SUNDAY
+            }
         }
     }
 

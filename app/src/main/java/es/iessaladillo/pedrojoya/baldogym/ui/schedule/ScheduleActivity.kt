@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import es.iessaladillo.pedrojoya.baldogym.R
 import es.iessaladillo.pedrojoya.baldogym.data.LocalRepository
 import es.iessaladillo.pedrojoya.baldogym.data.entity.TrainingSession
+import es.iessaladillo.pedrojoya.baldogym.data.entity.getCurrentWeekDay
 import es.iessaladillo.pedrojoya.baldogym.utils.invisibleUnless
 import kotlinx.android.synthetic.main.schedule_activity.*
 
@@ -50,25 +51,33 @@ class ScheduleActivity : AppCompatActivity() {
     }
 
     private fun setupViews() {
+        actualDay.text = getCurrentWeekDay().toString()
         buttonMon.setOnClickListener {
+            actualDay.text = "MONDAY"
             viewModel.filterMonday()
         }
         buttonTue.setOnClickListener {
+            actualDay.text = "TUESDAY"
             viewModel.filterTuesday()
         }
         buttonWed.setOnClickListener {
+            actualDay.text = "WEDNESDAY"
             viewModel.filterWednesday()
         }
         buttonThu.setOnClickListener {
+            actualDay.text = "THURSDAY"
             viewModel.filterThursday()
         }
         buttonFri.setOnClickListener {
+            actualDay.text = "FRIDAY"
             viewModel.filterFriday()
         }
         buttonSat.setOnClickListener {
+            actualDay.text = "SATURDAY"
             viewModel.filterSaturday()
         }
         buttonSun.setOnClickListener {
+            actualDay.text = "SUNDAY"
             viewModel.filterSunday()
         }
     }
